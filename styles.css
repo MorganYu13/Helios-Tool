@@ -1,0 +1,116 @@
+body {
+    background-image: url("madrid.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Inter', sans-serif !important;
+    letter-spacing: 1px;
+    backdrop-filter: blur(14px);
+}
+
+
+a {
+    text-decoration: none !important;
+}
+
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 40px;
+    transition: all 300ms ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #2b2a2a;
+    font-size: 17px;
+    transition: all 300ms ease-in-out;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+
+}
+
+.info-cards {
+    margin-top: 200px !important;
+}
+
+.form-control {
+    background-color: rgb(255, 255, 255, 0.2) !important ;
+    color: rgba(255, 255, 255, 0.733) !important;
+    border: none !important;
+}
+
+#search-addon {
+    background-color: rgb(255, 255, 255, 0.2) !important;
+}
+
+.card {
+    padding: 0px !important; 
+    color: white !important;
+}
+
+.card-body {
+    border-color: rgba(255, 255, 255, 0.678) !important;
+}
+
+.card > p {
+    font-weight: 900 !important;
+    font-size: 26 !important;
+}
+
+.card > img {
+    padding: 0 !important;
+}
+
+.footer {
+    margin: -13px; 
+    background-color: rgba(51,72,68,0.8);
+    padding: 50px 280px;
+    padding-bottom: 12px;
+}
+
+.footer-logo-links {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-logo-text {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+}
+
+.footer-logo-text h3 {
+    font-size: 30px; 
+    color:#ffa05a; 
+    font-weight: 800;
+}
+
+.footer-links {
+    padding-left: 1260px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: white; 
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    font-weight: 300;
+    padding: 5px;
+}
+
+.footer-links a:hover {
+    color: #ffa05a;
+    transition: all 300ms ease-in-out;
+}
+
