@@ -47,7 +47,7 @@
 
     
     <div class="info-cards d-flex row justify-content-evenly">
-            <a class = "d-flex col-2 justify-content-evenly" data-bs-toggle="collapse" href="#collapseExample-sat" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <a class = "d-flex col-2 justify-content-evenly" data-bs-toggle="collapse" href="#collapseExample-sat" role="button" aria-expanded="false" aria-controls="collapseExample" onclick="smoothScroll(document.getElementById('sat-info-card'))">
                 <div class="card d-flex justify-content-evenly bg-transparent shadow mb-5 bg-white rounded">
                     <img src="satellite.svg" class="card-img-top img_sat" alt="...">
                     <div class="card-body" style ="--bs-card-border-color: rgba(255, 255, 255, 0.825);">
@@ -57,7 +57,7 @@
             </a>
             
 
-            <a class = "d-flex col-2 justify-content-evenly" data-bs-toggle="collapse" href="#collapseExample-building" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <a class = "d-flex col-2 justify-content-evenly" data-bs-toggle="collapse" href="#collapseExample-building" role="button" aria-expanded="false" aria-controls="collapseExample" onclick="smoothScroll(document.getElementById('build-info-card'))">
                 <div class="card d-flex justify-content-evenly bg-transparent shadow mb-5 bg-white rounded">
                     <img src="building.jpg" class="card-img-top img_build" alt="...">
                     <div class="card-body">
@@ -67,7 +67,7 @@
             </a>
             
         
-            <a class = "d-flex col-2 justify-content-evenly" data-bs-toggle="collapse" href="#collapseExample-roads" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <a class = "d-flex col-2 justify-content-evenly" data-bs-toggle="collapse" href="#collapseExample-roads" role="button" aria-expanded="false" aria-controls="collapseExample" onclick="smoothScroll(document.getElementById('road-info-card'))">
                 <div class="card d-flex justify-content-evenly bg-transparent shadow mb-5 bg-white rounded">
                     <img src="roads.svg" class="card-img-top img_road" alt="...">
                     <div class="card-body">
@@ -77,18 +77,18 @@
             </a>
             
         
-            <a class = "d-flex col-2 justify-content-evenly" data-bs-toggle="collapse" href="#collapseExample-landmarks" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <a class = "d-flex col-2 justify-content-evenly" data-bs-toggle="collapse" href="#collapseExample-ameneties" role="button" aria-expanded="false" aria-controls="collapseExample" onclick="smoothScroll(document.getElementById('land-info-card'))">
                 <div class="card d-flex justify-content-evenly bg-transparent shadow mb-5 bg-white rounded">
                     <img src="land_lake_map.svg" class="card-img-top img_land_lake" alt="...">
                     <div class="card-body">
-                        <p class="h3 card-text fw-bolder">Landmarks.</p>
+                        <p class="h3 card-text fw-bolder">Ameneties.</p>
                     </div>
                 </div>
             </a>
     </div>
 
     <div class="collapse" id="collapseExample-sat">
-        <div class="card card-body bg-transparent p-5 m-5 d-flex flex-lg-row">
+        <div class="card card-body bg-transparent p-5 m-5 d-flex flex-lg-row" id="sat-info-card">
           <div class="sat-image-card"> <img src="satellite.svg" class = "img_sat p-5" alt=""> </div>
           <div class="sat-info-card">
                 <p class="h1 px-5 m-5" style = "font-size: 89px; font-weight: 800;">Satellite.</p>
@@ -98,7 +98,7 @@
     </div>
 
     <div class="collapse" id="collapseExample-building">
-        <div class="card card-body bg-transparent p-5 m-5 d-flex flex-lg-row">
+        <div class="card card-body bg-transparent p-5 m-5 d-flex flex-lg-row" id="build-info-card">
             <div class="build-image-card m-5"><img src="building.jpg" class = "img_build" alt=""></div>
             <div class="sat-info-card">
                   <p class="h1 px-5 m-5" style = "font-size: 89px; font-weight: 800;">Building.</p>
@@ -112,7 +112,7 @@
     </div>
 
     <div class="collapse" id="collapseExample-roads">
-        <div class="card card-body bg-transparent p-5 m-5 d-flex flex-lg-row">
+        <div class="card card-body bg-transparent p-5 m-5 d-flex flex-lg-row" id="road-info-card">
           <div class="road-image-card m-5"><img src="roads.svg" class = "img_road" alt=""></div>
           <div class="sat-info-card">
                 <p class="h1 px-5 m-5" style = "font-size: 89px; font-weight: 800;">Roads.</p>
@@ -120,11 +120,11 @@
         </div>
     </div>
 
-    <div class="collapse" id="collapseExample-landmarks">
-        <div class="card card-body bg-transparent p-5 m-5 d-flex flex-lg-row">
+    <div class="collapse" id="collapseExample-ameneties">
+        <div class="card card-body bg-transparent p-5 m-5 d-flex flex-lg-row" id="land-info-card">
             <div class="land-lake-image-card m-5"><img src="land_lake_map.svg" class = "img_land_lake" alt=""></div>
             <div class="left-card d-flex flex-column">
-                <p class="h1 px-5 m-5" style = "font-size: 89px; font-weight: 800;">Landmarks.</p>
+                <p class="h1 px-5 m-5" style = "font-size: 89px; font-weight: 800;">Ameneties.</p>
                 <div class="legend-card px-5 m-5">
                     <div class="row d-flex flex-lg-row">
                         <div class="column d-flex flex-lg-row">
@@ -243,7 +243,13 @@
         let img_land_lake_arr = document.getElementsByClassName("img_land_lake")
 
         const form = document.querySelector("#search-form");
+
         
+        function smoothScroll(targetDiv) { 
+            targetDiv.scrollIntoView();
+        }
+        
+
         form.addEventListener("submit", async event => {
             // Stop the browser from doing its native form submission
             event.preventDefault();
@@ -322,6 +328,9 @@
             }
 
         });
+
+
+
     </script>
 
 </body>
